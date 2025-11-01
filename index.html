@@ -3,26 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FUT Squad Builder</title>
+  <title>FUT Squad Builder - Versione Originale</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>FUT Squad Builder</h1>
+  <header>
+    <h1>FUT Squad Builder</h1>
+  </header>
 
-  <label for="formation">Seleziona modulo:</label>
-  <select id="formation">
-    <option value="4-4-2">4-4-2</option>
-    <option value="4-3-3">4-3-3</option>
-    <option value="3-5-2">3-5-2</option>
-  </select>
+  <section class="controls">
+    <label for="formation">Seleziona modulo:</label>
+    <select id="formation">
+      <option value="4-4-2">4-4-2</option>
+      <option value="4-3-3">4-3-3</option>
+      <option value="3-5-2">3-5-2</option>
+    </select>
 
-  <button onclick="resetFormation()">Reset campo</button>
+    <label for="filterRole">Filtro ruolo:</label>
+    <select id="filterRole">
+      <option value="all">Tutti</option>
+      <option value="GK">GK</option>
+      <option value="CB">CB</option>
+      <option value="LB">LB</option>
+      <option value="RB">RB</option>
+      <option value="CM">CM</option>
+      <option value="LW">LW</option>
+      <option value="RW">RW</option>
+      <option value="ST">ST</option>
+    </select>
 
-  <div id="suggestedTeam">
-    <!-- Tabella giocatori apparirà qui -->
-  </div>
+    <button id="resetBtn">Reset formazione</button>
+  </section>
 
-  <div id="formationField"></div>
+  <main>
+    <div id="playerPool"></div>
+    <div id="formationField"></div>
+  </main>
 
   <script src="script.js"></script>
 </body>
