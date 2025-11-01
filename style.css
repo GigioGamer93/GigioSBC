@@ -1,49 +1,78 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: #121212;
   color: #fff;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-button {
-  margin: 10px;
-  padding: 8px 15px;
-  cursor: pointer;
+header { text-align: center; padding: 20px; background: #1f1f1f; }
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+button, select {
+  padding: 5px 10px;
   border-radius: 5px;
   border: none;
   background-color: #0a84ff;
-  color: #fff;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
 }
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+#playerPool {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-card {
+  background: #1f1f1f;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: grab;
+  border: 1px solid #fff;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.player-card:active { cursor: grabbing; transform: scale(1.05); }
 
 #formationField {
-  margin: 20px auto;
-  width: 90%;
-  max-width: 900px;
+  width: 600px;
   height: 500px;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
   background: linear-gradient(to bottom, #009933, #007a29);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  position: relative;
 }
-
 .player-dot {
   position: absolute;
   transform: translate(-50%, -50%);
+  padding: 4px 6px;
   background: rgba(255,255,255,0.15);
   border: 1px solid #fff;
   border-radius: 8px;
-  padding: 4px 6px;
-  min-width: 70px;
+  min-width: 60px;
   cursor: grab;
-  transition: left 0.5s, top 0.5s, background 0.2s;
+  transition: left 0.3s, top 0.3s, background 0.2s;
 }
-
-.player-dot:active {
-  cursor: grabbing;
-  background: rgba(255,255,255,0.3);
-}
-
 .player-dot.highlight {
   box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.7);
   z-index: 10;
